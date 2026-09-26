@@ -1,0 +1,16 @@
+NORTHSIDE COFFEE
+824 ALDER STREET
+PORTLAND OR 97205
+Order A-2291   12/03/2026 09:41
+Cashier Rina   Register 2
+QTY ITEM   AMOUNT
+N   Iced Vanilla Latte   13.00
+Butter Croissant   6.50
+F F F   Sparkling Water   3 .25
+Dark Chocolate Bar   4.75
+Subtotal   27.50
+Tax 8 . 8%   2.42
+TOTAL   29.92
+VISA ****4412   76 '67
+AUTH CODE 009213
+Thank you for visiting!
