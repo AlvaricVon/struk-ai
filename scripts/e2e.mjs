@@ -84,3 +84,7 @@ while (!done) {
 }
 
 console.log('\ne2e ok')
+
+// The QVAC native worker keeps handles open, so Node would sit there for
+// minutes after the run had already succeeded. Exit deliberately instead.
+process.exit(0)
