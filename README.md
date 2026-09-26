@@ -34,6 +34,17 @@ npm install
 npm start
 ```
 
+### Versions
+
+Pinned to exact versions rather than ranges, so the numbers below are
+reproducible rather than "whatever shipped this week":
+
+| | Version |
+| --- | --- |
+| `@qvac/sdk` | **0.20.0** |
+| Node.js | 20 or newer |
+| License | MIT |
+
 Then open <http://127.0.0.1:5173> and drop in a receipt, or click one of the
 bundled samples. The server binds to loopback on purpose, so nothing on your
 network can reach it.
