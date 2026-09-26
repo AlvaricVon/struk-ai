@@ -1,0 +1,31 @@
+{
+  "name": "struk-ai",
+  "version": "0.1.0",
+  "description": "Offline receipt scanner and expense logger powered by on-device AI (QVAC SDK)",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test",
+    "selftest": "node scripts/selftest.mjs",
+    "probe": "node scripts/probe.mjs",
+    "dump-ocr": "node scripts/dump-ocr.mjs",
+    "eval": "node scripts/eval-extract.mjs"
+  },
+  "keywords": [
+    "qvac",
+    "on-device",
+    "offline",
+    "ocr",
+    "receipt",
+    "expense"
+  ],
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@qvac/sdk": "0.20.0"
+  }
+}

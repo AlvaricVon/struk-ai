@@ -1,0 +1,6 @@
+node_modules/
+out/
+*.log
+
+# Model weights and the OCR fixtures' binary sources are large or regenerable.
+# The rendered samples ARE checked in on purpose, the app needs them to demo.
