@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>StrukAI &middot; on-device receipt scanner</title>
+		<link rel="stylesheet" href="/styles.css" />
+		<link rel="icon" href="data:," />
+	</head>
+	<body>
+		<header>
+			<h1>StrukAI</h1>
+			<p class="tagline">Receipts read entirely on this machine. No account, no upload, no API key.</p>
+			<p class="pill" id="device-pill">checking device&hellip;</p>
+		</header>
+
+		<main>
+			<section class="panel">
+				<h2>1 &middot; Pick a receipt</h2>
+
+				<div id="dropzone" tabindex="0" role="button" aria-label="Choose a receipt image">
+					<strong>Drop a photo here</strong>
+					<span>or click to choose &middot; PNG, JPEG or WebP</span>
+				</div>
+
+				<div class="row">
+					<label class="check">
+						<input type="checkbox" id="enhance" />
+						<span>Enhance &amp; retry</span>
+					</label>
+					<label class="check">
+						<span>Model</span>
+						<select id="quality">
+							<option value="accurate">Accurate &middot; Qwen3 1.7B</option>
+							<option value="fast">Fast &middot; Qwen3 0.6B</option>
+						</select>
+					</label>
+				</div>
+
+				<div class="row samples">
+					<span class="muted">No photo handy?</span>
+					<div id="sample-buttons" class="chips"></div>
+				</div>
+
+				<img id="preview" alt="Selected receipt" hidden />
+			</section>
+
+			<section class="panel">
+				<h2>2 &middot; Read it</h2>
+				<button id="scan" disabled>Scan receipt</button>
+
+				<div id="progress-wrap" hidden>
+					<div class="bar"><div id="bar-fill"></div></div>
+					<p id="progress-text" class="muted">Starting&hellip;</p>
+				</div>
+
+				<p id="error" class="error" hidden></p>
+
+				<div id="result" hidden>
+					<div class="receipt-head">
+						<div>
+							<h3 id="merchant">&mdash;</h3>
+							<p id="address" class="muted"></p>
+						</div>
+						<div class="total">
+							<strong id="total">&mdash;</strong>
+							<span id="currency" class="muted"></span>
+						</div>
+					</div>
+
+					<dl class="facts">
+						<div><dt>Date</dt><dd id="date">&mdash;</dd></div>
+						<div><dt>Category</dt><dd id="category">&mdash;</dd></div>
+						<div><dt>Payment</dt><dd id="payment">&mdash;</dd></div>
+						<div><dt>OCR confidence</dt><dd id="confidence">&mdash;</dd></div>
+					</dl>
+
+					<p id="provenance" class="note" hidden></p>
+
+					<table id="items" hidden>
+						<thead>
+							<tr><th>Qty</th><th>Item</th><th class="right">Amount</th></tr>
+						</thead>
+						<tbody></tbody>
+						<tfoot><tr><td colspan="2">Sum of items</td><td class="right" id="item-sum"></td></tr></tfoot>
+					</table>
+
+					<details id="raw-wrap">
+						<summary>Raw text and model output</summary>
+						<h4>OCR text</h4>
+						<pre id="raw-text"></pre>
+						<h4>Model JSON</h4>
+						<pre id="raw-model"></pre>
+						<h4>Timings</h4>
+						<pre id="timings"></pre>
+					</details>
+				</div>
+			</section>
+		</main>
+
+		<footer>
+			<span id="resident" class="muted"></span>
+		</footer>
+
+		<script type="module" src="/app.js"></script>
+	</body>
+</html>
