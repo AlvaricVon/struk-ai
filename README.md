@@ -7,6 +7,17 @@ No account, no API key, and the image never leaves the device.
 
 ![StrukAI reading a receipt](docs/screenshot.png)
 
+## QVAC requirement
+
+- `@qvac/sdk`: **0.20.0** (pinned exactly, in `package.json` and `package-lock.json`)
+- QVAC calls made by this app: `loadModel()`, `ocr()`, `classify()`, `completion()`,
+  and `upscale()`
+- Models: `OCR_LATIN` for text, a bundled classifier for document type,
+  `QWEN3_1_7B_INST_Q4` for extraction, `REALESRGAN_X4PLUS` for the optional
+  enlarge pass
+- Every one of these runs on the local machine. No cloud AI service is involved
+  at any point, and the server binds to `127.0.0.1` only.
+
 ## Why
 
 The usual answer to "scan my receipts" is to upload them somewhere. That means a
