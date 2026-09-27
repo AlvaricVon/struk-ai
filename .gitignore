@@ -2,5 +2,9 @@ node_modules/
 out/
 *.log
 
+# Local demo helpers, not part of the app.
+start-demo.cmd
+DEMO-SCRIPT.txt
+
 # Model weights and the OCR fixtures' binary sources are large or regenerable.
 # The rendered samples ARE checked in on purpose, the app needs them to demo.
